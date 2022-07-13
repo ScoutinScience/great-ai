@@ -17,7 +17,7 @@
     
     
       
-        <title>How to use a GreatAI service - GreatAI documentation</title>
+        <title>How to deploy a GreatAI service - GreatAI documentation</title>
       
     
     
@@ -48,6 +48,19 @@
 
     
     
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="Transform your prototype AI code into production-ready software.">
+    <meta property="og:type" content="">
+    <meta property="og:image" content=https://great-ai.scoutinscience.com/media/og-image.png>
+
+    <style>
+        .jupyter-wrapper a {
+            color: var(--md-typeset-a-color) !important;
+        }
+    </style>
+
   </head>
   
   
@@ -70,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-a-greatai-service" class="md-skip">
+        <a href="#how-to-deploy-a-greatai-service" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to use a GreatAI service
+              How to deploy a GreatAI service
             
           </span>
         </div>
@@ -354,6 +367,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        Installation guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../create-service/" class="md-nav__link">
         How to create a GreatAI service
       </a>
@@ -392,12 +419,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          How to use a GreatAI service
+          How to deploy a GreatAI service
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        How to use a GreatAI service
+        How to deploy a GreatAI service
       </a>
       
         
@@ -499,7 +526,7 @@
   
     <li class="md-nav__item">
       <a href="../handle-training-data/" class="md-nav__link">
-        How to handle training data
+        How to manage training data
       </a>
     </li>
   
@@ -513,7 +540,7 @@
   
     <li class="md-nav__item">
       <a href="../large_file/" class="md-nav__link">
-        How to use LargeFile
+        How to use LargeFile-s
       </a>
     </li>
   
@@ -526,22 +553,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../call_remote.md" class="md-nav__link">
-        None
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scraping/" class="md-nav__link">
-        Scraping
+      <a href="../call-remote/" class="md-nav__link">
+        How to call remote GreatAI instances
       </a>
     </li>
   
@@ -705,7 +718,7 @@
   
     <li class="md-nav__item">
       <a href="../../examples/simple/data/" class="md-nav__link">
-        Train a domain classifier on the semantic scholar dataset
+        Simple example: data engineering
       </a>
     </li>
   
@@ -719,7 +732,7 @@
   
     <li class="md-nav__item">
       <a href="../../examples/simple/train/" class="md-nav__link">
-        Train a domain classifier on the semantic scholar dataset
+        Optimise and train a model
       </a>
     </li>
   
@@ -733,7 +746,7 @@
   
     <li class="md-nav__item">
       <a href="../../examples/simple/deploy/" class="md-nav__link">
-        Train a domain classifier on the semantic scholar dataset
+        Hardening and deployment
       </a>
     </li>
   
@@ -742,6 +755,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/scibert/" class="md-nav__link">
+        Explainable SciBERT
+      </a>
     </li>
   
 
@@ -876,6 +903,7 @@
 
 
 
+
                 
   <a href="https://github.com/schmelczer/great-ai/edit/main/docs/how-to-guides/use-service.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
@@ -883,7 +911,7 @@
 
 
 
-<h1 id="how-to-use-a-greatai-service">How to use a GreatAI service<a class="headerlink" href="#how-to-use-a-greatai-service" title="Permanent link">#</a></h1>
+<h1 id="how-to-deploy-a-greatai-service">How to deploy a GreatAI service<a class="headerlink" href="#how-to-deploy-a-greatai-service" title="Permanent link">#</a></h1>
 <p>After <a href="/how-to-guides/create-service">creating a GreatAI service</a> by wrapping your prediction function, and optionally <a href="/how-to-guides/configure-service">configuring it</a>, it's time to do some prediction.</p>
 <p>Let's take the following example:</p>
 <div class="highlight"><span class="filename">greeter.py</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">great_ai</span> <span class="kn">import</span> <span class="n">GreatAI</span>
@@ -919,9 +947,10 @@
 <p>Some configuration options are also supported.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>great-ai greeter.py --port <span class="m">8000</span> --host <span class="m">127</span>.0.0.1 --timeout_keep_alive <span class="m">10</span>
 </code></pre></div>
-<blockquote>
-<p>For more options (but no Notebook support, use <a href="https://www.uvicorn.org/" target="_blank">uvicorn</a>)</p>
-</blockquote>
+<details class="note">
+<summary>More options</summary>
+<p>For more options (but no Notebook support), simply use <a href="https://www.uvicorn.org/" target="_blank">uvicorn</a> for starting your app (available at <code>greeter.app</code>).</p>
+</details>
 <h3 id="in-production">In production<a class="headerlink" href="#in-production" title="Permanent link">#</a></h3>
 <p>There are three main approaches for deploying a GreatAI service.</p>
 <h4 id="manual-deployment">Manual deployment<a class="headerlink" href="#manual-deployment" title="Permanent link">#</a></h4>
@@ -941,7 +970,7 @@
 <p>You can replace <code>pwd</code> with the path to your code's folder.</p>
 </blockquote>
 <h4 id="use-a-platform-as-a-service">Use a Platform-as-a-Service<a class="headerlink" href="#use-a-platform-as-a-service" title="Permanent link">#</a></h4>
-<p>Similarly to the previous approach, your code will run in a container. However, instead of manually managing it, you can just choose from a plethora of PaaS providers (such as <a href="https://www.digitalocean.com/products/app-platform" target="_blank">DO App platform</a> or <a href="https://mlem.ai/" target="_blank">MLEM</a>) that take a Docker image as a source and handle the rest of the deployment.</p>
+<p>Similarly to the previous approach, your code will run in a container. However, instead of manually managing it, you can just choose from a plethora of PaaS providers (such as <a href="https://aws.amazon.com/ecs/" target="_blank">AWS ECS</a>, <a href="https://www.digitalocean.com/products/app-platform" target="_blank">DO App platform</a>, <a href="https://mlem.ai/" target="_blank">MLEM</a>) that take a Docker image as a source and handle the rest of the deployment.</p>
 <p>To this end, you can also create a custom Docker image. It is especially useful if you have third-party dependencies, such as <a href="https://pytorch.org/" target="_blank">PyTorch</a> or <a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">schmelczera/great-ai:latest</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
@@ -988,7 +1017,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2022</span>
       
     
   </small>
@@ -1025,13 +1054,13 @@
       
       
         
-        <a href="../handle-training-data/" class="md-footer__link md-footer__link--next" aria-label="Next: How to handle training data" rel="next">
+        <a href="../handle-training-data/" class="md-footer__link md-footer__link--next" aria-label="Next: How to manage training data" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              How to handle training data
+              How to manage training data
             </div>
           </div>
           <div class="md-footer__button md-icon">
