@@ -6,7 +6,7 @@ build-backend = "flit_core.buildapi"
 name = "great_ai" # Module's import name/local folder name
 
 [project]
-name = "great-ai"  # PyPI package name
+name = "sis-great-ai"  # PyPI package name
 dynamic = ["version", "description"]
 readme = "README.md"
 authors = [{ name = "András Schmelczer", email = "andras@schmelczer.dev" }]
