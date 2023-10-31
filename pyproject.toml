@@ -36,7 +36,7 @@ dependencies = [
     "boto3 >= 1.23.0",
     "plotly >= 5.8.0",
     "pandas",
-    "dash >= 2.4.0",
+    "dash >= 2.14.1",
     "fastapi >= 0.70.0",
     "uvicorn[standard] >= 0.18.0",
     "watchdog >= 2.1.0",
