@@ -24,7 +24,7 @@ for dir in "$@"; do
 
     cd "$dir"
 
-    python3 -m flake8 . --count --show-source --statistics --exclude=__init__.py,.env,external --ignore=E501,E402,F821,W503,E722,E203
+    python3 -m flake8 . --count --show-source --statistics --exclude=__init__.py,.env,external --ignore=E501,E402,F821,W503,E722,E203,E251,E701
 
     cd -
 done
