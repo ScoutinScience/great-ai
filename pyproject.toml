@@ -69,8 +69,8 @@ dev = [
 
 [project.urls]
 Documentation = "https://great-ai.scoutinscience.com"
-GitHub = "https://github.com/schmelczer/great-ai"
-DockerHub = "https://hub.docker.com/repository/docker/schmelczera/great-ai"
+GitHub = "https://github.com/scoutinscience/great-ai"
+DockerHub = "https://hub.docker.com/repository/docker/scoutinscience/great-ai"
 
 [project.scripts]
 great_ai = "great_ai.__main__:main"

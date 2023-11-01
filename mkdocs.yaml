@@ -1,9 +1,9 @@
 site_name: GreatAI documentation
 site_description: GreatAI helps you easily transform your prototype AI code into production-ready software.
-site_author: András Schmelczer
+site_author: ScoutinScience
 
-repo_url: https://github.com/schmelczer/great-ai
-repo_name: schmelczer/great-ai
+repo_url: https://github.com/scoutinscience/great-ai
+repo_name: scoutinscience/great-ai
 edit_uri: edit/main/docs/
 
 copyright: GNU General Public License v3
@@ -12,16 +12,16 @@ extra:
   generator: false
   social:
     - icon: fontawesome/solid/code
-      link: https://schmelczer.dev
+      link: https://scoutinscience.com
       name: about the author
     - icon: fontawesome/brands/github
-      link: https://github.com/schmelczer/great-ai
+      link: https://github.com/scoutinscience/great-ai
       name: great-ai on Github
     - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/repository/docker/schmelczera/great-ai
+      link: https://hub.docker.com/repository/docker/scoutinscience/great-ai
       name: great-ai on DockerHub
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/great-ai
+      link: https://pypi.org/project/sis-great-ai
       name: great-ai on PyPI
 
 theme:

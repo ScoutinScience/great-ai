@@ -6,7 +6,7 @@
 
 [![PyPI version](https://badge.fury.io/py/sis-great-ai.svg)](https://badge.fury.io/py/sis-great-ai)
 [![Downloads](https://pepy.tech/badge/sis-great-ai/month)](https://pepy.tech/project/sis-great-ai)
-[![Docker Pulls](https://img.shields.io/docker/pulls/schmelczera/great-ai)](https://hub.docker.com/repository/docker/schmelczera/great-ai)
+[![Docker Pulls](https://img.shields.io/docker/pulls/scoutinscience/great-ai)](https://hub.docker.com/repository/docker/scoutinscience/great-ai)
 [![Test](https://github.com/scoutinscience/great-ai/actions/workflows/test.yml/badge.svg)](https://github.com/scoutinscience/great-ai/actions/workflows/test.yml)
 [![Sonar line coverage](https://sonar.scoutinscience.com/api/project_badges/measure?project=great-ai&metric=coverage)](https://sonar.scoutinscience.com/dashboard?id=great-ai)
 [![Sonar LoC](https://sonar.scoutinscience.com/api/project_badges/measure?project=great-ai&metric=ncloc)](https://sonar.scoutinscience.com/dashboard?id=great-ai)
@@ -65,10 +65,10 @@ However, [research indicates](https://great-ai.scoutinscience.com) that professi
 pip install sis-great-ai
 ```
 
-## Find `great-ai` on [DockerHub](https://hub.docker.com/repository/docker/schmelczera/great-ai)
+## Find `great-ai` on [DockerHub](https://hub.docker.com/repository/docker/scoutinscience/great-ai)
 
 ```sh
-docker run -p6060:6060 schmelczera/great-ai
+docker run -p6060:6060 scoutinscience/great-ai
 ```
 
 ## Contribute

@@ -75,7 +75,7 @@ Run the notebook directly in a container or create a service for it using your f
 
 ```sh
 docker run -p 6060:6060 --volume `pwd`:/app --rm \
-  schmelczera/great-ai deploy.ipynb
+  scoutinscience/great-ai deploy.ipynb
 ```
 > You can replace ``pwd`` with the path to your code's folder.
 
@@ -86,7 +86,7 @@ Similar to the previous approach, your code will run in a container. However, in
 To this end, you can also create a custom Docker image. It is especially useful if you have third-party dependencies, such as [PyTorch](https://pytorch.org/){ target=_blank } or [TensorFlow](https://www.tensorflow.org/){ target=_blank }.
 
 ```Dockerfile
-FROM schmelczera/great-ai:latest
+FROM scoutinscience/great-ai:latest
 
 # Remove this block if you don't have a requirements.txt
 COPY requirements.txt ./   

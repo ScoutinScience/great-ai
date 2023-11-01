@@ -48,6 +48,6 @@ pip install --upgrade great-ai
 You can also install the latest (usually unreleased) version from GitHub.
 
 ```sh
-pip install --upgrade git+https://github.com/schmelczer/great-ai.git
+pip install --upgrade git+https://github.com/scoutinscience/great-ai.git
 ```
 > Python 3.7 or later is required.

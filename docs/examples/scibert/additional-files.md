@@ -37,7 +37,7 @@ numpy==1.23.0
 ## Dockerfile
 
 ```Dockerfile title="Dockerfile"
-FROM schmelczera/great-ai:v0.1.6
+FROM scoutinscience/great-ai:latest
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir --requirement requirements.txt

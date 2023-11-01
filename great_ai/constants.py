@@ -15,7 +15,7 @@ DEFAULT_LARGE_FILE_CONFIG_PATHS = {
     LargeFileMongo: MONGO_CONFIG_PATHS,
 }
 
-GITHUB_LINK = "https://github.com/schmelczer/great_ai"
+GITHUB_LINK = "https://github.com/scoutinscience/great-ai"
 
 TRAIN_SPLIT_TAG_NAME = "train"
 TEST_SPLIT_TAG_NAME = "test"
