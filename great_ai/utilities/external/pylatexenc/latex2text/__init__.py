@@ -1059,7 +1059,6 @@ class LatexNodes2Text(object):
             if self._is_bare_macro_node(prev_node) and node.isNodeType(
                 latexwalker.LatexCharsNode
             ):
-
                 if not self.strict_latex_spaces["between-macro-and-chars"]:
                     # after a macro with absolutely no arguments, include
                     # post_space in output by default if there are other chars
@@ -1518,7 +1517,6 @@ class LatexNodes2Text(object):
 
 class _PushEquationContext(latexwalker._PushPropOverride):
     def __init__(self, l2t):
-
         new_strict_latex_spaces = None
         if l2t.strict_latex_spaces["in-equations"] is not None:
             new_strict_latex_spaces = _parse_strict_latex_spaces_dict(

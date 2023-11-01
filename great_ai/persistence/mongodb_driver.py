@@ -111,7 +111,6 @@ class MongoDbDriver(TracingDatabaseDriver):
         has_feedback: Optional[bool] = None,
         sort_by: Sequence[SortBy] = [],
     ) -> Tuple[List[Trace], int]:
-
         query: Dict[str, Any] = {
             "filter": {},
         }

@@ -194,7 +194,6 @@ def create_dash_app(function_name: str, version: str, function_docs: str) -> Fla
 def update_layout(
     first_element: Optional[Trace],
 ) -> Tuple[List[Dict[str, Sequence[str]]], Dict[str, Any]]:
-
     if first_element:
         keys = list(first_element.to_flat_dict(include_original=False).keys())
         header_height = max(len(i.split(":")) for i in keys)

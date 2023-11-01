@@ -61,7 +61,6 @@ def manage_communication(
                         raise WorkerException(r.exception)
 
                 if unordered:
-
                     yield r.value
                     next_output_index += 1
                 else:

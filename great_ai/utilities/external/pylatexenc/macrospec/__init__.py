@@ -154,7 +154,7 @@ class EnvironmentSpec(object):
         environmentname,
         args_parser=MacroStandardArgsParser(),
         is_math_mode=False,
-        **kwargs
+        **kwargs,
     ):
         super(EnvironmentSpec, self).__init__(**kwargs)
         self.environmentname = environmentname

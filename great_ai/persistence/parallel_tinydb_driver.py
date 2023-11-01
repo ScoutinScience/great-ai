@@ -51,7 +51,7 @@ class ParallelTinyDbDriver(TracingDatabaseDriver):
         since: Optional[datetime] = None,
         until: Optional[datetime] = None,
         has_feedback: Optional[bool] = None,
-        sort_by: Sequence[SortBy] = []
+        sort_by: Sequence[SortBy] = [],
     ) -> Tuple[List[Trace], int]:
         def does_match(d: Dict[str, Any]) -> bool:
             return (

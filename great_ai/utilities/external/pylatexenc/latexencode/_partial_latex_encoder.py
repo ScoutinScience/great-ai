@@ -71,9 +71,8 @@ class PartialLatexToLatexEncoder(UnicodeToLatexEncoder):
         # keyword arguments:
         keep_latex_chars=r"\${}^_",
         conversion_rules=None,
-        **kwargs
+        **kwargs,
     ):
-
         base_conversion_rules = conversion_rules
         if base_conversion_rules is None:
             base_conversion_rules = ["defaults"]
@@ -89,7 +88,7 @@ class PartialLatexToLatexEncoder(UnicodeToLatexEncoder):
                 )
             ]
             + base_conversion_rules,
-            **kwargs
+            **kwargs,
         )
 
         self.keep_latex_chars = keep_latex_chars

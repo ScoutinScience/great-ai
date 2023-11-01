@@ -303,7 +303,6 @@ class MacroStandardArgsParser(object):
                 argnlist.append(node)
 
             elif argt == "[":
-
                 if self.optional_arg_no_space and p < len(w.s) and w.s[p].isspace():
                     # don't try to read optional arg, we don't allow space
                     argnlist.append(None)
@@ -394,7 +393,6 @@ class ParsedVerbatimArgs(ParsedMacroArgs):
     """
 
     def __init__(self, verbatim_chars_node, verbatim_delimiters=None, **kwargs):
-
         # provide argspec/argnlist to the parent class so that any code that is
         # not "verbatim environment-aware" sees this simply as the argument to
         # an empty verbatim environment
@@ -431,7 +429,6 @@ class VerbatimArgsParser(MacroStandardArgsParser):
         self.verbatim_arg_type = verbatim_arg_type
 
     def parse_args(self, w, pos, parsing_state=None):
-
         from .. import latexwalker
 
         if self.verbatim_arg_type == "verbatim-environment":

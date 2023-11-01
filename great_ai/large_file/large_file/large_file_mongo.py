@@ -60,7 +60,6 @@ class LargeFileMongo(LargeFileBase):
                 ),
                 version=int(f.name.split(MONGO_NAME_VERSION_SEPARATOR)[-1]),
                 remote_path=(f._id, f.length),
-                origin="mongodb",
             )
             for f in self._client.find(
                 {

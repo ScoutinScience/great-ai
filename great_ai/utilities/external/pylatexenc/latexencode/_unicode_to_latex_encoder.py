@@ -563,7 +563,6 @@ class UnicodeToLatexEncoder(object):
         p.pos = 0
 
         while p.pos < len(s):
-
             if self._maybe_skip_ascii(s, p):
                 continue
 

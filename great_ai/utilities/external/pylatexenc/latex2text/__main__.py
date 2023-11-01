@@ -34,7 +34,6 @@ from ..version import version_str
 
 
 def main(argv=None):
-
     if argv is None:
         argv = sys.argv[1:]
 
@@ -304,9 +303,7 @@ def main(argv=None):
 
 
 def run_main():
-
     try:
-
         main()
 
     except SystemExit:
@@ -320,6 +317,5 @@ def run_main():
 
 
 if __name__ == "__main__":
-
     main()
     # run_main() # debug

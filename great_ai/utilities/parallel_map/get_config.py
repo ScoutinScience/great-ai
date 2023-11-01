@@ -15,7 +15,6 @@ def get_config(
     chunk_size: Optional[int],
     concurrency: Optional[int],
 ) -> ParallelMapConfiguration:
-
     is_input_sequence = hasattr(input_values, "__len__")
     input_length = len(input_values) if is_input_sequence else None  # type: ignore
 
