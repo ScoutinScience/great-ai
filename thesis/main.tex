@@ -1,5 +1,6 @@
-\documentclass[runningheads]{llncs}
+\documentclass{report}
 
+\usepackage{placeins}
 \usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{hyperref}
@@ -8,11 +9,25 @@
 \usepackage{enumitem}
 \usepackage{threeparttable}
 \usepackage{multicol}
+\usepackage[super]{nth}
 \usepackage[compact]{titlesec}
 \usepackage{framed}
 \usepackage{quoting}
+\usepackage{caption}
 \usepackage{xcolor}
+\usepackage{minted}
+\usepackage{tocloft}
+\usepackage[a4paper,
+            bindingoffset=0cm,
+            left=2.5cm,
+            right=2.5cm,
+            top=2.5cm,
+            bottom=2.65cm]{geometry}
+\usepackage{array}
+\usepackage{ragged2e}
 
+% Left-aligned fixed-width table column
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
 
 % Header & footer
 \pagestyle{fancy}
@@ -20,10 +35,15 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 
+% set chapter title margins
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{20pt}{20pt}
+
+% 2-column bibliography
 \makeatletter
 \renewenvironment{thebibliography}[1]
-     {\begin{multicols}{2}[\section*{\refname}]%
-      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+     {\begin{multicols}{2}[\chapter*{References}]%
       \small
       \list{\@biblabel{\@arabic\c@enumiv}}%
           {\settowidth\labelwidth{\@biblabel{#1}}%
@@ -63,32 +83,100 @@
 % Block quote
 \definecolor{bg}{RGB}{186, 233, 255}
 \colorlet{shadecolor}{bg}
-\usepackage{lipsum}
 \newenvironment{displayquote}
- {\begin{shaded*}
+{\begin{samepage}\begin{shaded*}
   \quoting[leftmargin=0pt, vskip=0pt]
- }
- {\endquoting
- \end{shaded*}
+}
+{\endquoting
+  \end{shaded*}\end{samepage}
 }
 
+% Section numbering
+\renewcommand\thechapter{\arabic{chapter}}
+\renewcommand\thesection{\thechapter.\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+\makeatletter
+\renewcommand\small{%
+   \@setfontsize\small\@ixpt{11}%
+   \abovedisplayskip 8.5\p@ \@plus3\p@ \@minus4\p@
+   \abovedisplayshortskip \z@ \@plus2\p@
+   \belowdisplayshortskip 4\p@ \@plus2\p@ \@minus2\p@
+   \def\@listi{\leftmargin\leftmargini
+               \parsep 0\p@ \@plus1\p@ \@minus\p@
+               \topsep 8\p@ \@plus2\p@ \@minus4\p@
+               \itemsep0\p@}%
+   \belowdisplayskip \abovedisplayskip
+}
+
+\frenchspacing
+\widowpenalty=10000
+\clubpenalty=10000
+
+\setlength\footnotesep{12\p@}
+\setlength\textfloatsep{8mm\@plus 2\p@ \@minus 4\p@}
+\setlength\intextsep   {8mm\@plus 2\p@ \@minus 2\p@}
+
+\setcounter{secnumdepth}{2}
+
+\renewcommand\@pnumwidth{2em}
+\setcounter{tocdepth}{1}
+\setlength{\parskip}{0.55em}
+\linespread{1.2}
+
+\def\@dottedtocline#1#2#3#4#5{%
+  \ifnum #1>\c@tocdepth \else
+    \vskip \z@ \@plus.2\p@
+    {\leftskip #2\relax \rightskip \@tocrmarg \advance\rightskip by 0pt plus 2cm
+               \parfillskip -\rightskip \pretolerance=10000
+     \parindent #2\relax\@afterindenttrue
+     \interlinepenalty\@M
+     \leavevmode
+     \@tempdima #3\relax
+     \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     {#4}\nobreak
+     \leaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+        mu$}\hfill
+     \nobreak
+     \hb@xt@\@pnumwidth{\hfil\normalfont \normalcolor #5}%
+     \par}%
+  \fi}
+\makeatother
 
 \begin{document}
 
 \includepdf[pages=-]{frontpage/frontpage.pdf}
 \include{chapters/0_abstract}
+
+\setcounter{page}{3}
 \tableofcontents
+
+\chapter*{Acknowledgements}
+I wish to extend my special thanks to my supervisors, Prof. dr. ir. Joost Visser and Dr. Suzan Verberne, for their invaluable assistance and guidance. I would also like to thank ScoutinScience B.V. for our fruitful collaboration and for allowing me to use their software for experimentation, validation, and demonstration purposes. Last but not least, I would like to individually thank
+Ádám Kovács,
+Balázs Csomor,
+Bálint Bakcsa,
+Bendegúz Bendicsek,
+Joana Trashlieva,
+Leonardo Pohl,
+Lion Cassens,
+László Radnai,
+Máté Wolf,
+and Olivér Angyal
+for participating and providing insightful feedback in our interviews.
 
 \input{chapters/1_introduction}
 \input{chapters/2_background}
 \input{chapters/3_methods}
 \input{chapters/4_design}
-\input{chapters/5_case/main}
-\input{chapters/6_interviews}
+\input{chapters/5_cases/main}
+\input{chapters/6_results}
 \input{chapters/7_conclusion}
 
-\clearpage
 \bibliographystyle{splncs04}
 \bibliography{ref}
+
+\input{chapters/appendix}
 
 \end{document}
