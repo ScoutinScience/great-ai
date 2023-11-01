@@ -29,7 +29,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: schmelczera/great-ai
+          images: scoutinscience/great-ai
 
       - name: Build and push
         uses: docker/build-push-action@v3

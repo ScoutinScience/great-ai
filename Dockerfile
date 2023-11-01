@@ -3,8 +3,8 @@ FROM python:3.10.4-slim-bullseye
 
 LABEL org.opencontainers.image.title="GreatAI package wrapper image"
 LABEL org.opencontainers.image.vendor="ScoutinScience B.V."
-LABEL org.opencontainers.image.authors="andras@schmelczer.dev"
-LABEL org.opencontainers.image.source="https://github.com/schmelczer/great-ai"
+LABEL org.opencontainers.image.authors="info@scoutinscience.com"
+LABEL org.opencontainers.image.source="https://github.com/scoutinscience/great-ai"
 
 SHELL ["/bin/bash", "-c"]
 
