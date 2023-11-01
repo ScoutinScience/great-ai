@@ -65,7 +65,7 @@ def parameter(
             expected_type = func.__annotations__.get(parameter_name)
 
             if expected_type is not None:
-                check_type(parameter_name, argument, expected_type)
+                check_type(argument, expected_type)
 
             if not validate(argument):
                 raise ArgumentValidationError(
