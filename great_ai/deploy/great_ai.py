@@ -16,7 +16,7 @@ from typing import (
 )
 
 from fastapi import FastAPI
-from tqdm.cli import tqdm
+from tqdm import tqdm
 from typing_extensions import Literal  # <= Python 3.7
 
 from ..constants import DASHBOARD_PATH
