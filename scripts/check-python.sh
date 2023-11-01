@@ -17,7 +17,7 @@ for dir in "$@"; do
     if find . -name "*.py" 2>/dev/null | grep -q .; then
         mkdir -p .mypy_cache/
         yes | python3 -m mypy . --install-types --cache-dir=.mypy_cache/ > /dev/null || true
-        python3 -m mypy --namespace-packages --ignore-missing-imports --install-types --non-interactive --cache-dir=.mypy_cache/ --disallow-untyped-defs --disallow-incomplete-defs --follow-imports=silent --exclude=external/ --exclude=/build/ --pretty .
+        python3 -m mypy --no-namespace-packages --ignore-missing-imports --install-types --non-interactive --cache-dir=.mypy_cache/ --disallow-untyped-defs --disallow-incomplete-defs --follow-imports=silent --exclude=external/ --exclude=/build/ --pretty .
     fi
 
     python3 -m flake8 . --count --show-source --statistics --exclude=__init__.py,.env,external --ignore=E501,E402,F821,W503,E722,E203
