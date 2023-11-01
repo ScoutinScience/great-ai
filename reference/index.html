@@ -3551,7 +3551,7 @@ ArgumentValidationError is thrown when the return value is False.</p>
 <a id="__codelineno-0-65" name="__codelineno-0-65"></a>            <span class="n">expected_type</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__annotations__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">parameter_name</span><span class="p">)</span>
 <a id="__codelineno-0-66" name="__codelineno-0-66"></a>
 <a id="__codelineno-0-67" name="__codelineno-0-67"></a>            <span class="k">if</span> <span class="n">expected_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-68" name="__codelineno-0-68"></a>                <span class="n">check_type</span><span class="p">(</span><span class="n">parameter_name</span><span class="p">,</span> <span class="n">argument</span><span class="p">,</span> <span class="n">expected_type</span><span class="p">)</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68"></a>                <span class="n">check_type</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">expected_type</span><span class="p">)</span>
 <a id="__codelineno-0-69" name="__codelineno-0-69"></a>
 <a id="__codelineno-0-70" name="__codelineno-0-70"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">validate</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
 <a id="__codelineno-0-71" name="__codelineno-0-71"></a>                <span class="k">raise</span> <span class="n">ArgumentValidationError</span><span class="p">(</span>
