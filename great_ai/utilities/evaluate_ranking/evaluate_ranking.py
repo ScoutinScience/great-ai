@@ -45,12 +45,13 @@ def evaluate_ranking(
 
     assert 0 <= target_recall <= 1
 
-    if plot and axes is None:
-        fig = plt.figure(figsize=(10, 10))
-        fig.patch.set_facecolor("white")
-        ax = plt.axes()
-    else:
-        ax = axes
+    if plot:
+        if axes is None:
+            fig = plt.figure(figsize=(10, 10))
+            fig.patch.set_facecolor("white")
+            ax = plt.axes()
+        else:
+            ax = axes
 
     classes = sorted(unique(expected), reverse=reverse_order)
     str_classes = [str(c) for c in classes]
