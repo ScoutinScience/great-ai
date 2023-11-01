@@ -64,6 +64,9 @@ def serve() -> None:
         file_name = get_script_name(args.file_name)
         app = find_app(file_name)
 
+        # This is needed for type checking, if app is None, an exception is thrown in find_app
+        assert app is not None
+
         logger.info(f"Starting uvicorn server with app={app}")
 
         config = Config(app, **common_config)
