@@ -38,7 +38,7 @@ dependencies = [
     "pandas",
     "dash >= 2.14.1",
     "Werkzeug == 2.2.2",
-    "fastapi >= 0.104.1",
+    "fastapi == 0.70.0",
     "uvicorn[standard] >= 0.18.0",
     "watchdog >= 2.1.0",
     "typeguard >= 2.10.0",

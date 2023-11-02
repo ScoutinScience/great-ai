@@ -16,7 +16,7 @@ class Query(BaseModel):
     has_feedback: Optional[bool] = None
 
     class Config:
-        json_schema_extra = {
+        schema_extra = {
             "example": {
                 "filter": [
                     {
