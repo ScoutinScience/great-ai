@@ -1,6 +1,6 @@
 """Transform your prototype AI code into production-ready software."""
 
-__version__ = "0.1.16"
+__version__ = "0.1.17"
 
 
 from .context import configure
