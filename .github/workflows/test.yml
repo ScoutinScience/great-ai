@@ -9,41 +9,41 @@ on:
 
 jobs:
   test:
-      name: Build and test on ${{ matrix.operating-system }} with Python ${{ matrix.python-version }}
+    name: Build and test on ${{ matrix.operating-system }} with Python ${{ matrix.python-version }}
 
-      strategy:
-        matrix:
-          python-version: ["3.7", "3.8", "3.9", "3.10"]
-          operating-system: [windows-latest, ubuntu-latest]
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
+        operating-system: [windows-latest, ubuntu-latest]
 
-      runs-on: ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
 
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-        - name: Setup Python ${{ matrix.python-version }}
-          uses: actions/setup-python@v4
-          with:
-            python-version: ${{ matrix.python-version }}
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
 
-        - name: Install dependencies
-          run: |
-            python3 -m pip install --upgrade pip
-            pip install --upgrade './[dev]'
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install --upgrade './[dev]'
 
-        - name: Check code and formatting
-          run: scripts/check-python.sh great_ai tests
+      - name: Check code and formatting
+        run: scripts/check-python.sh great_ai tests
 
-        - name: Run tests
-          run: python3 -m pytest --doctest-modules --cov=. --cov-report=xml --junit-xml pytest.xml --asyncio-mode=strict || true
+      - name: Run tests
+        run: python3 -m pytest --doctest-modules --cov=. --cov-report=xml --junit-xml pytest.xml --asyncio-mode=strict || true
 
-        - name: Upload results
-          if: always()
-          uses: actions/upload-artifact@v3
-          with:
-            name: Unit test coverage (Python ${{ matrix.python-version }} - ${{ matrix.operating-system }})
-            path: "*.xml"
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Unit test coverage (Python ${{ matrix.python-version }} - ${{ matrix.operating-system }})
+          path: "*.xml"
 
   sonar:
     name: Analyse Python project with SonarQube
@@ -66,7 +66,7 @@ jobs:
         with:
           path: artifacts
 
-      - uses: sonarsource/sonarqube-scan-action@master
+      - uses: sonarsource/sonarqube-scan-action@v1.2.0
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
