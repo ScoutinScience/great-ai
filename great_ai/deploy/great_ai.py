@@ -146,7 +146,7 @@ class GreatAI(Generic[T, V]):
             >>> my_function('3').output
             Traceback (most recent call last):
                 ...
-            TypeError: type of a must be int; got str instead
+            typeguard.TypeCheckError: str is not an instance of int
 
         Args:
             func: The prediction function that needs to be decorated.

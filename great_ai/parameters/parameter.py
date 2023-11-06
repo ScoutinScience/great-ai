@@ -32,7 +32,7 @@ def parameter(
         >>> my_function('3')
         Traceback (most recent call last):
             ...
-        TypeError: type of a must be int; got str instead
+        typeguard.TypeCheckError: str is not an instance of int
 
         >>> @parameter('positive_a', validate=lambda v: v > 0)
         ... def my_function(positive_a: int):
